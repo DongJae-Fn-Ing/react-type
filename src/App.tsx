@@ -38,6 +38,29 @@ type MemObj = { [key:string] : string}
                   //글자로 된 모든 object 속성의 타입은: string
 let bob:MemObj ={name: "kim"}
 
+//js 문법 그대로 ts에서 사용 가능
+//primitive types
+//변수에 타입을 지정하는 것은 실드를 쓰는 것
+
+//타입스크립트 갓 배운 사람들 실수
+// 온갖 곳에 타입 다 지정함
+//타입 지정 원래 자동으로 됩니다. 아래처럼 안써도 let wow:string = "asd"랑 같음
+let wow = "asd"
+/* wow=123; */
+//해봐
+
+let myName:string = "dj"
+let myOld:number = 21;
+let area:string ="비밀"
+
+let music:{name : string, title: string} = {name:"하현상", title:"등대"}
+
+let project:{member:string[], days:number, started:boolean } = {
+  member : ['kim', 'park'],
+  days : 30,
+  started : true,
+}
+
   return (
     <div className="App">
       타입 스크립트
