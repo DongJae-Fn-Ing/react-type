@@ -61,6 +61,59 @@ let project:{member:string[], days:number, started:boolean } = {
   started : true,
 }
 
+/* 타입을 지정하기 애매할 때 */
+/* union type */
+let 회원: number| string =123;
+/* 유니언 타입 타입이 2개이상인 변수 */
+/* 변수 값을 할당하면 값이 확정이 난다 */
+
+var 어레이: (number|string)[] = [1,'2',3]
+var 오브젝트: {data : number | string} = { data : '123' }
+
+/* any type */
+
+let 이름:any = "" //모든 타입이 들어갈 수 있다. 정말 아무거나 모든 자료형
+// 그러나 편하다고 막 쓰면 ㄴㄴ 해
+// 타입실드 해제 문법임 즉 변수 문법을 없앤다.
+
+/* unknown type */
+let 이름2:unknown = ""
+//any 랑 같이 똑같지만 any 보다 안전함 오염방지
+//타입 스크립트는 엄격함 타입이 같아야 연산도 가능
+/* 아직 어떤 타입이 들어올지 모를 경우, 다양한 타입을 집어넣어야할 경우 이걸 사용해보시길 바랍니다. 
+
+중요한 특징은
+
+1. unknown 타입엔 모든 자료 다 집어넣을 수 있음
+
+2. 자료집어넣어도 타입은 그대로 unknown입니다 */
+
+
+/* let 나이: string|number;
+나이 + 1; */
+/* 위에가 연산 불가한 이유 */
+//나이가 string인 경우도 있어서
+
+/* let 나이: unknown = 1;
+나이 + 1; */
+
+let user:string = 'kim';
+let age:undefined|number = undefined;
+let married:Boolean = false; 
+let 철수:(string|undefined|number|Boolean)[] = [user, age, married];
+
+
+
+let 학교:{score:(number|Boolean)[], teacher:string, friend:string|(string|{teacher : string})[] } = {
+  score : [100, 97, 84],
+  teacher : 'Phil',
+  friend : 'John'
+}
+학교.score[4] = false;
+학교.friend = ['Lee' , 학교.teacher]
+
+
+
   return (
     <div className="App">
       타입 스크립트
