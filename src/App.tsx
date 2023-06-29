@@ -168,7 +168,13 @@ function 숙제1(a?:string){
 //(숙제2) 함수에 숫자 또는 문자를 집어넣으면 자릿수를 세어 출력해주는 함수를 만들어보십시오.
 //예를 들어 '245' 이런 문자를 입력하면 3이 return 되어야합니다.
 //숫자도 마찬가지로 9567 이런 숫자를 입력하면 4가 return 되어야합니다.
-//숫자 또는 문자 이외의 자료가 들어오면 안됩니
+//숫자 또는 문자 이외의 자료가 들어오면 안됩니다.
+
+function 숙제2(a:string|number){
+  let num = a.toString();
+  return console.log("숙제2",num.length);
+}
+숙제2(1245);
 
 //(숙제3) 결혼 가능 확률을 알려주는 함수를 만들어봅시다.
 //1. 함수의 파라미터로 월소득(만원단위), 집보유여부(true/false), 매력점수 ('상' or '중' or '하') 를 입력할 수 있어야합니다. 
@@ -178,6 +184,17 @@ function 숙제1(a?:string){
 //(예시)
 //결혼가능하냐(700, false, '중') 이렇게 사용할 경우 "결혼가능"을 return 해줍니다.
 //결혼가능하냐(100, false, '상') 이렇게 사용할 경우 아무것도 return되지 않습니다.
+
+function 숙제3(a:number,b:boolean,c:string){
+  let num:number = a + (b === true ? 500 : 0) +(c === "상" ? 100: 0);
+  if(num >= 600){
+    return console.log("결혼가능");
+  }else{
+
+  }
+}
+
+숙제3(700, false, '상');
   
 return (
     <div className="App">
