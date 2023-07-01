@@ -237,6 +237,14 @@ arr[0] = x as number;
 //[1,2,3] 이렇게 숫자로 깔끔하게 변환되어 나오는 클리닝함수를 만들어오고 타입지정까지 확실히 해보십시오.
 //모르는 부분은 구글검색해도 봐드림 
 
+function 클리닝함수(x:(Number|string)[]){
+  
+  return console.log(x.map((a)=>{ return Number(a);}));
+}
+
+클리닝함수(['1', 2, '3'])
+
+
 let 철수쌤 = { subject : 'math' }
 let 영희쌤 = { subject : ['science', 'english'] }
 let 민수쌤 = { subject : ['science', 'art', 'korean'] }
@@ -248,6 +256,16 @@ let 민수쌤 = { subject : ['science', 'art', 'korean'] }
 //그 선생님이 가르치고 있는 과목중 맨 뒤의 1개를 return 해주는 함수를 만들어봅시다.
 //그리고 타입지정도 엄격하게 해보도록 합시다
 
+/* {subject : string | string[] } = { subject : '123' } */
+function 마지막출력(x:{subject : string|string[]}){;
+  if(typeof x.subject === "string"){
+    return console.log(x.subject)
+  }else{
+    return console.log(x.subject[x.subject.length-1]);
+  }
+}
+
+마지막출력(민수쌤);
 return (
     <div className="App">
       타입 스크립트
