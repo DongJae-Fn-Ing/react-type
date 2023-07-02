@@ -264,8 +264,52 @@ function 마지막출력(x:{subject : string|string[]}){;
     return console.log(x.subject[x.subject.length-1]);
   }
 }
-
 마지막출력(민수쌤);
+
+//타입이 너무나도 길면 타입을 변수에 넣어서 사용할 수 있다. type Animal 이런식으로
+type Animal = string | number | undefined;
+let 동물 : Animal = "asdasd";
+//위 방식을 type alias
+// type Animal  앞에 타입을 쓰고 일반 변수랑 차이점을 주기 위해서 대문자로
+
+type Info = {name: string, age: number}
+let 사람임:Info = {name:"king", age: 20}
+
+const 출생지역 = {region: "시흥"}
+// 이러면 보통 못 바꾸지만
+// 출생지역.region으로 수정이 된다. 그러나 타입스크립트에서는 불가능
+// 타입스크립트에서는 오브젝트 자료형 수정에 락을 거는 거 가능
+
+// 오브젝트 타입을 지정해주는 곳에
+type data ={readonly name:string}
+
+/* type data ={name?:string}   ? 들어와도 되고 안들어와도 상관 없음*/
+
+const 사람2:data = {name:"엠버"}
+/* 사람2.name = "유라"; */
+
+//추가적으로 알면 좋은 것 타입스크립트 에러는 에디터&터미널에서만 존재함
+
+
+// 타입 변수 uinion type으로 합치기 가능
+type Name = string;
+type Ages = number;
+type Person = Name | Ages; 
+// 이런식으로 이러면 string 또는 숫자
+
+
+//& 연산자로 object 타입 합치기
+type PositionX = { x : number };
+type PositionY = { y : number };
+// 오브젝트 타입 변수는 아래처럼 가능
+type NewType = PositionX & PositionY;
+let 좌표 :NewType = { x : 1, y : 2 }
+//이러한 방식을 extend 한다.
+
+//타입 변수 주의점
+// type Error = number; 이렇게 정의를 하면
+//  type Error = string; 재정의 불가능
+
 return (
     <div className="App">
       타입 스크립트
