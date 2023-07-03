@@ -310,9 +310,31 @@ let 좌표 :NewType = { x : 1, y : 2 }
 // type Error = number; 이렇게 정의를 하면
 //  type Error = string; 재정의 불가능
 
+/* 숙제1 */
+type Info2 = {name: string, age: number}
+type Info3 = {name: string, age: number}
+
+type NewType2 = Info2 & Info3;
+let test4:NewType2 ={name: "asd", age: 2}
+console.log("테스트:::", test4) 
+
+
+/* 숙제2 */
+type Work = {color?: string, size: number, readonly postion: number[]}
+let works5:Work ={size :2, postion:[1]}
+console.log(works5)
+
+/* 숙제3 */
+type Work6 = {name: string, phone: number, email: string}
+let asdd:Work6 = { name : 'kim', phone : 123, email : 'abc@naver.com' }
+
+type Work7={old:boolean}
+type Work8 = Work6|Work7;
+
+let asdasd:Work8 = { name : 'kim', phone : 123, email : 'abc@naver.com', old: true }
 return (
     <div className="App">
-      타입 스크립트
+      타입 스크립트 
       {test}
     </div>
   );
