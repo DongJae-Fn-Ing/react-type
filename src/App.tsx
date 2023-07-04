@@ -332,6 +332,44 @@ type Work7={old:boolean}
 type Work8 = Work6|Work7;
 
 let asdasd:Work8 = { name : 'kim', phone : 123, email : 'abc@naver.com', old: true }
+
+
+/* Literal Types */
+//더 엄격한 타입지정 가능 kim or park 문자만 들어온더
+
+let 이름5:'kim';
+let 이름6:123;
+//이런식으로
+
+let 접니다:"짱"|"강하다"
+
+/* Literal Types 장점*/
+/* 변수에 뭐가 들어올지 더 엄격하게 관리 가능 */
+//자동완성 힌트도 좋다
+//const 변수에 업그레이드 버전
+
+//함수에 파라미터 부분에도 가능 
+
+function 리터럴타입 (a:'짱'){}
+//리터럴타입("짱") 만 들어와야한다.
+
+function 가위바위보(a:"가위"|"바위"|"보"):("가위"|"바위"|"보")[]{
+  return [a];
+}
+//리터럴 타입 단점
+
+가위바위보("가위");
+console.log(가위바위보("가위"));
+
+var 자료 ={name:"kim"}
+/* function 내함수(a:"kim"){
+
+} */
+/* 내함수(자료.name) */// 자료가 킴이 아닌 타입이 스트링이다.
+//이렇게 하면 오류인게 kim이라는 자료만 들어올 수 있는 게 아닌 kim 이라는 타입만 들어오는 것이 가능하다,
+//해결법 미리 객체에 키값에 속성을 부여허거나 
+//as const를 객체 뒤에 쓴다
+//이 속성의 타입을 벨류값으로 지정한다. 그리고 모두 읽기 전용으로 바꿔준다.
 return (
     <div className="App">
       타입 스크립트 
