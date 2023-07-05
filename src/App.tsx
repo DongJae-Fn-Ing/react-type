@@ -370,6 +370,38 @@ var 자료 ={name:"kim"}
 //해결법 미리 객체에 키값에 속성을 부여허거나 
 //as const를 객체 뒤에 쓴다
 //이 속성의 타입을 벨류값으로 지정한다. 그리고 모두 읽기 전용으로 바꿔준다.
+
+
+
+//함수에 type alias 지정하는 법
+
+type 함수타입 = (a:string)=> number;
+//함수 타입을 지정하는 법 애로우 펑션만
+//이 타입 에일리어스가 들어가는 것은 a라는 스트링만 받을 수 있는 파라미터를 받고 함수에서 넘버값을 리턴한다,
+
+/* function 함수4(){
+
+} */
+
+//타입 에일리어스를 쓰는 함수를 사용하고 싶은 경우 위처럼 쓰면 불가
+let 함수4:함수타입 = function(a){
+  return 10;
+}
+type 함수타입11 = (a:number)=> number;
+type 함수타입2 = {name:string, plusOne:함수타입11,changeName:any}
+
+let 회원정보:함수타입2 = {
+  name : "kim",
+  plusOne (a){
+    return a + 1
+  },
+  changeName : () => {
+    console.log('안녕')
+  }
+}
+
+회원정보.plusOne(1);
+회원정보.changeName();
 return (
     <div className="App">
       타입 스크립트 
